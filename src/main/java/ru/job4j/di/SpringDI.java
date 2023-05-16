@@ -11,5 +11,10 @@ public class SpringDI {
         ui.add("Введи свое имя: ");
         ui.add("Введи год рождения: ");
         ui.print();
+
+        Store store = context.getBean(Store.class);
+        store.add("Petr Arsentev");
+        Store another = context.getBean(Store.class);
+        another.getAll().forEach(System.out::println);
     }
 }
